@@ -1,0 +1,31 @@
+set modelines=0
+set nocompatible	" vim, not vi
+set ruler		" show the line number on the bar
+set autoindent
+set relativenumber
+set undofile		" create <FILENAME>.un~ files to save changes for closed
+			" files
+set lazyredraw          " don't redraw when don't have to
+set ignorecase		" make case-sensitive search intelligent
+set smartcase
+
+set incsearch		" search highlighting
+set showmatch
+set hlsearch
+set ttyfast             " we have a fast terminal
+
+set shiftwidth=4
+set fileformat=unix
+set mouse=a
+set tabstop=4
+set softtabstop=4
+
+set dictionary+=/usr/share/dict/words " use with ctrl-x ctrl-k
+
+au FocusLost * :wa	" save on losing focus
+
+set wrap
+set textwidth=80
+autocmd BufNewFile *.c,*.h source syntax/c.vim
+autocmd BufEnter *.c,*.h source syntax/c.vim
+colorscheme molokai
