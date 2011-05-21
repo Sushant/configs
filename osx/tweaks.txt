@@ -1,0 +1,13 @@
+# Change the current screenshot format
+defaults write com.apple.screencapture type jpg
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean true
+
+# Add a "Recents" stack to Dock
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'
+killall Dock
+
+# Add spacer to Dock
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+killall Dock
